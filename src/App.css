@@ -1,19 +1,31 @@
-body{
+body {
   background-color: #282c34;
 }
 .App {
   text-align: center;
-  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#nav-logo {
+  height: 55px;
+  width: 55px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media (max-width: 600px) {
+  #desktop-menu {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 600px) {
+  #mobile-menu {
+    visibility: hidden;
+    position: absolute;
   }
 }
 
