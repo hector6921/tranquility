@@ -45,6 +45,6 @@
   flex-direction: column;
   padding: 20px;
   font-family:'Roboto','sans-serif' ;
-
+  justify-content: space-around;
 
 }
