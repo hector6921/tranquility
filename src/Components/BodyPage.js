@@ -15,10 +15,9 @@ export default function ComplexGrid() {
       </div>
       <div id="home-banner">
         <video width="320" height="240" autoPlay loop muted>
-        <source src="./Images/mountains.mp4" type="video/mp4"/>
+          <source src="./Images/mountains.mp4" type="video/mp4" />
         </video>
         <div id="info-holder"></div>
-
       </div>
       <div id="about-info">
         aksdjgkajsda ga jaj'gakjg[akgjak aljgad;klgajdg]
