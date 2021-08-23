@@ -6,7 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import HomeBanner from "./Images/HomeBannerPic.jpg";
 import "./BodyPage.css";
-
+import { CardMedia } from "@material-ui/core";
+import video from './Images/mountains.mp4'
+import Button from '@material-ui/core/Button'
 export default function ComplexGrid() {
   return (
     <div id="main-container">
@@ -14,14 +16,33 @@ export default function ComplexGrid() {
         <h1>Welcome to Tranquility</h1>
       </div>
       <div id="home-banner">
-        <video width="320" height="240" autoPlay loop muted>
-        <source src="./Images/mountains.mp4" type="video/mp4"/>
-        </video>
-        <div id="info-holder"></div>
-
+      <CardMedia
+            component='video'
+            image={video}
+            autoPlay
+            loop
+            muted
+            style={{
+              height:'100%',
+              width:'100%',
+              objectFit:"cover",
+              filter:'brightness(1.2)'
+            }}
+        />
+        <div id="info-holder">
+          <Typography style={{fontSize:25,color:'#fff',fontWeight:900}}>
+            ABOUT
+          </Typography>
+        <Typography  style={{fontSize:25,color:'#fff',fontWeight:600}}>
+    I understand the weight and frustration of feeling like there is more out there for you, but not knowing where to turn to first. That’s why my mission is simple: give my clients the wellness education, tools and resources that they need to feel happy, healthy, and capable of managing life’s pressures.
+    </Typography>
+    <Button color="primary">Get Started</Button>
+        </div>
+        
       </div>
       <div id="about-info">
-        aksdjgkajsda ga jaj'gakjg[akgjak aljgad;klgajdg]
+      ABOUT
+   
       </div>
     </div>
   );
