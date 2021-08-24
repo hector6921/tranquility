@@ -15,6 +15,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import forestpic from "../Images/forest.mp4";
 import { CardMedia } from "@material-ui/core";
 import "../Pages/Signin.css";
+import logo from '../Images/tranquility.jpg'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -31,6 +32,7 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
+    
   },
   image: {
     backgroundImage: `url(${forestpic})`,
@@ -47,21 +49,25 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+  logo: {
+    margin: theme.spacing(2),
+    height:'100px',
+    width:'100px'
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "70%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
+    
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
   video: {
-    width: "58.3%",
+    width: "68.3%",
     visibility: "hidden",
+
   },
 }));
 
@@ -69,9 +75,9 @@ export default function SignInSide() {
   const classes = useStyles();
 
   return (
-    <Grid container component="main" className={classes.root} id="container">
-      <CssBaseline />
+     <div style={{height:'100vh',backgroundColor:'#30ba8f'}} id="container">
       <div className={classes.video} id="video">
+         <CssBaseline />
         <CardMedia
           component="video"
           image={forestpic}
@@ -86,13 +92,11 @@ export default function SignInSide() {
           }}
         />
       </div>
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
+            <img className={classes.logo} src={logo} />
+
+          <Typography style={{color:'#fff',fontWeight:900}} component="h1" variant="h5">
+            TRANQUILITY
           </Typography>
           <form className={classes.form} noValidate id="form">
             <TextField
@@ -105,6 +109,7 @@ export default function SignInSide() {
               name="email"
               autoComplete="email"
               autoFocus
+              style={{backgroundColor:'#fff',borderRadius:5}}
             />
             <TextField
               variant="outlined"
@@ -116,6 +121,7 @@ export default function SignInSide() {
               type="password"
               id="password"
               autoComplete="current-password"
+              style={{backgroundColor:'#fff',borderRadius:5}}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -125,7 +131,7 @@ export default function SignInSide() {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              style={{backgroundColor:'#d3a955', color:'#000',fontWeigh:900}}
               className={classes.submit}
             >
               Sign In
@@ -147,7 +153,6 @@ export default function SignInSide() {
             </Box>
           </form>
         </div>
-      </Grid>
-    </Grid>
+    </div>
   );
 }

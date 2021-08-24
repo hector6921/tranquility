@@ -9,8 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 50vh;
-    padding: 20px 0;
+    
   }
   #video {
     position: absolute;
@@ -20,5 +19,11 @@
 @media (max-width: 400px) {
   #container {
     padding: 0;
+    object-fit: scale-down;
+   
   }
+}
+#container{
+
+  display: flex;
 }
