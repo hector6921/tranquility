@@ -1,4 +1,5 @@
 import React from "react";
+import { useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -11,6 +12,10 @@ import video from "./Images/mountains.mp4";
 import Button from "@material-ui/core/Button";
 import { Fab } from "@material-ui/core";
 export default function ComplexGrid() {
+  const videoRef = useRef();
+  const setPlayBack = () => {
+    videoRef.current.playbackRate = 0.4;
+  };
   return (
     <div id="main-container">
       <div id="Welcome-Message">
@@ -21,6 +26,8 @@ export default function ComplexGrid() {
           component="video"
           image={video}
           autoPlay
+          ref={videoRef}
+          onCanPlay={() => setPlayBack()}
           loop
           muted
           style={{
@@ -45,12 +52,15 @@ export default function ComplexGrid() {
             size="large"
             variant="extended"
             component="button"
-            color="primary"
+            color="inherit"
           >
-            <Button color="inherit">Get Started</Button>
+            <Button style={{ fontWeight: 900, fontSize: 16 }}>
+              Get Started
+            </Button>
           </Fab>
         </div>
       </div>
+      <div id="about-info"></div>
     </div>
   );
 }
