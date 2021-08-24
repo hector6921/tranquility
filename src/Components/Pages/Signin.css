@@ -1,0 +1,24 @@
+@media (min-width: 960px) {
+  #video {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 959px) {
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 50vh;
+    padding: 20px 0;
+  }
+  #video {
+    position: absolute;
+  }
+}
+
+@media (max-width: 400px) {
+  #container {
+    padding: 0;
+  }
+}
