@@ -44,7 +44,7 @@ export default function ComplexGrid() {
         <Typography  style={{fontSize:25,color:'#fff',fontWeight:600}}>
     I understand the weight and frustration of feeling like there is more out there for you, but not knowing where to turn to first. That’s why my mission is simple: give my clients the wellness education, tools and resources that they need to feel happy, healthy, and capable of managing life’s pressures.
     </Typography>
-    <Fab size="large" variant='extended' component='button' color="inherit"><Button style={{textEmphasisColor:'black' ,fontWeight:900,fontSize:16}}>Get Started</Button></Fab>
+    <Fab size="large" variant='extended' component='button' color="inherit"><Button style={{fontWeight:900,fontSize:16}}>Get Started</Button></Fab>
         </div>
         
       </div>
