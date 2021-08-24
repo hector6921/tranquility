@@ -1,0 +1,25 @@
+
+#ckbox0:checked ~ #paper0{
+    background-color: #30ba8f;
+}
+#ckbox1:checked ~ #paper1{
+    background-color: #30ba8f;
+}
+#ckbox2:checked ~ #paper2{
+    background-color: #30ba8f;
+}
+#ckbox3:checked ~ #paper3{
+    background-color: #30ba8f;
+}
+#ckbox4:checked ~ #paper4{
+    background-color: #30ba8f;
+}
+#ckbox5:checked ~ #paper5{
+    background-color: #30ba8f;
+}
+#ckbox6:checked ~ #paper6{
+    background-color: #30ba8f;
+}
+#ckbox7:checked ~ #paper7{
+    background-color: #30ba8f;
+}

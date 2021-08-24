@@ -16,6 +16,7 @@ import sweating from './Images/sweating.png';
 import washing from './Images/washing.png';
 import checking from './Images/checking.jpg';
 import orderliness from './Images/orderliness.png';
+import './Pages/disSel.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,6 +53,8 @@ const useStyles = makeStyles((theme) => ({
             }
       },
       position:'absolute',
+      opacity:0,
+      zIndex: '-99'
       
   },
   label:{
@@ -59,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
       height:'140px',
       width:'140px',
       position:'absolute',
-      opacity: 0
+      opacity:0
     
   }
 //   selection:{
@@ -75,20 +78,25 @@ export default function DisSel() {
   const handleChange = (event) => {
     setSpacing(Number(event.target.value));
   };
+  
+ const reset = (e) => {
+    e.preventDefault()
+    
+    pics.map((item,index)=>document.getElementById(`ckbox${index}`).checked = false)
 
+ }
   return (
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
         <Grid className={classes.selection} container justifyContent="center" spacing={spacing}>
           {[0,1,2,3,4,5,6,7].map((value) => (
             <Grid key={value} item>
-                 <input className={classes.ckbox} id={value} type='checkbox'/>
-              <label className={classes.label} for={value} id={`label-${value}`}></label>
-            <Paper className={classes.paper} >
+                 <input className={classes.ckbox} id={`ckbox${value}`}  type='checkbox'/>
+              <label className={classes.label} for={`ckbox${value}`} id={`label${value}`}></label>
+            <Paper id={`paper${value}`} className={classes.paper} >
                 <img className={classes.pics}  src={pics[value]} />
                 <Typography style={{fontFamily:'sans-serif' ,fontWeight:900}} >{picsName[value]}</Typography>
             </Paper>
-               
             </Grid>
           ))}
         </Grid>
@@ -98,7 +106,7 @@ export default function DisSel() {
               backgroundColor: "#d3a955",
               color: "#000",
               fontWeigh: 900,
-            }}><Button>RESET</Button></Fab>
+            }}><Button id='reset' onClick={reset}>RESET</Button></Fab>
             <div style={{width:20}}></div>
       <Fab variant="extended"    style={{
               backgroundColor: "#d3a955",
