@@ -6,11 +6,13 @@ import SignInSide from "./Components/Pages/Signin";
 import SignUp from "./Components/Pages/Signup";
 import SendData from "./Components/Pages/supabase";
 
+
 function App() {
   return (
     <div>
-      <SignUp />
-      <SendData/>
+      {/* <SignInSide /> */}
+      <Content/>
+     
     </div>
   );
 }

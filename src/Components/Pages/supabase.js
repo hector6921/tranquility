@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js'
-import axios from 'axios' 
 import { useState, useEffect } from 'react'
 
 const supabaseUrl = 'https://esapczunfsvnooradvdd.supabase.co'
@@ -18,5 +17,5 @@ const { data, error } = await supabase
 useEffect(()=>{saveData()},[])
 return(
     <div></div>
-);
+)
 }

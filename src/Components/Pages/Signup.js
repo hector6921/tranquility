@@ -34,8 +34,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    height: "100%",
-    width: "50%",
+    maxWidth: "30vw",
   },
   logo: {
     margin: theme.spacing(2),
@@ -48,11 +47,11 @@ const useStyles = makeStyles((theme) => ({
   },
   TextField: {
     backgroundColor: "#fff",
-    borderRadius: 5,
+    borderRadius: 5
   },
 
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(3, 0, 2)
   },
 }));
 
@@ -62,7 +61,7 @@ export default function SignUp() {
   return (
     <div
       style={{
-        height: "100%",
+        height:'100vh',
         backgroundColor: "#30ba8f",
         display: "flex",
         flexDirection: "column",
@@ -85,29 +84,17 @@ export default function SignUp() {
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <TextField
                 className={classes.TextField}
                 autoComplete="fname"
-                name="firstName"
+                name="fullname"
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
-                label="First Name"
+                id="fullname"
+                label="Full Name"
                 autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                className={classes.TextField}
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
               />
             </Grid>
             <Grid item xs={12}>
