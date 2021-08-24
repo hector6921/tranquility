@@ -15,13 +15,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import forestpic from "../Images/forest.mp4";
 import { CardMedia } from "@material-ui/core";
 import "../Pages/Signin.css";
-import logo from '../Images/tranquility.jpg'
+import logo from "../Images/tranquility.jpg";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Tranquility
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -32,7 +32,6 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
-    
   },
   image: {
     backgroundImage: `url(${forestpic})`,
@@ -49,17 +48,15 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    
   },
   logo: {
     margin: theme.spacing(2),
-    height:'100px',
-    width:'100px'
+    height: "100px",
+    width: "100px",
   },
   form: {
     width: "70%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
-    
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -67,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
   video: {
     width: "68.3%",
     visibility: "hidden",
-
   },
 }));
 
@@ -75,9 +71,9 @@ export default function SignInSide() {
   const classes = useStyles();
 
   return (
-     <div style={{height:'100vh',backgroundColor:'#30ba8f'}} id="container">
+    <div style={{ height: "100vh", backgroundColor: "#30ba8f" }} id="container">
       <div className={classes.video} id="video">
-         <CssBaseline />
+        <CssBaseline />
         <CardMedia
           component="video"
           image={forestpic}
@@ -92,67 +88,75 @@ export default function SignInSide() {
           }}
         />
       </div>
-        <div className={classes.paper}>
-            <img className={classes.logo} src={logo} />
+      <div className={classes.paper}>
+        <img className={classes.logo} src={logo} />
 
-          <Typography style={{color:'#fff',fontWeight:900}} component="h1" variant="h5">
-            TRANQUILITY
-          </Typography>
-          <form className={classes.form} noValidate id="form">
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              style={{backgroundColor:'#fff',borderRadius:5}}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              style={{backgroundColor:'#fff',borderRadius:5}}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              style={{backgroundColor:'#d3a955', color:'#000',fontWeigh:900}}
-              className={classes.submit}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
+        <Typography
+          style={{ color: "#fff", fontWeight: 900 }}
+          component="h1"
+          variant="h5"
+        >
+          TRANQUILITY
+        </Typography>
+        <form className={classes.form} noValidate id="form">
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            style={{ backgroundColor: "#fff", borderRadius: 5 }}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            style={{ backgroundColor: "#fff", borderRadius: 5 }}
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            style={{
+              backgroundColor: "#d3a955",
+              color: "#000",
+              fontWeigh: 900,
+            }}
+            className={classes.submit}
+          >
+            Sign In
+          </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
             </Grid>
-            <Box mt={5}>
-              <Copyright />
-            </Box>
-          </form>
-        </div>
+            <Grid item>
+              <Link href="#" variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+          </Grid>
+          <Box mt={5}>
+            <Copyright />
+          </Box>
+        </form>
+      </div>
     </div>
   );
 }

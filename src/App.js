@@ -9,7 +9,6 @@ import SendData from "./Components/Pages/supabase";
 function App() {
   return (
     <div>
-      {/* <SignInSide /> */}
       <SignUp />
       <SendData/>
     </div>
