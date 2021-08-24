@@ -7,10 +7,8 @@ import SignInSide from "./Components/Pages/Signin";
 function App() {
   return (
     <div>
-      {/* <Home />
-      <Content />
-   */}
-      <SignInSide />
+      <Home />
+      {/* <Content /> */}
     </div>
   );
 }
