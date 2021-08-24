@@ -1,4 +1,5 @@
 import React from "react";
+import { useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -11,6 +12,10 @@ import video from './Images/mountains.mp4'
 import Button from '@material-ui/core/Button'
 import { Fab } from "@material-ui/core";
 export default function ComplexGrid() {
+  const videoRef = useRef();
+  const setPlayBack = () => {
+    videoRef.current.playbackRate = 0.4;
+  };
   return (
     <div id="main-container">
       <div id="Welcome-Message">
@@ -21,13 +26,15 @@ export default function ComplexGrid() {
             component='video'
             image={video}
             autoPlay
+            ref={videoRef}
+            onCanPlay={() => setPlayBack()}
             loop
             muted
             style={{
               height:'100%',
               width:'100%',
               objectFit:"cover",
-              filter:'brightness(1.2)'
+              filter:'brightness(1.2)',
             }}
         />
         <div id="info-holder">
@@ -37,7 +44,7 @@ export default function ComplexGrid() {
         <Typography  style={{fontSize:25,color:'#fff',fontWeight:600}}>
     I understand the weight and frustration of feeling like there is more out there for you, but not knowing where to turn to first. That’s why my mission is simple: give my clients the wellness education, tools and resources that they need to feel happy, healthy, and capable of managing life’s pressures.
     </Typography>
-    <Fab size="large" variant='extended' component='button' color="primary"><Button color="inherit">Get Started</Button></Fab>
+    <Fab size="large" variant='extended' component='button' color="inherit"><Button style={{textEmphasisColor:'black' ,fontWeight:900,fontSize:16}}>Get Started</Button></Fab>
         </div>
         
       </div>
