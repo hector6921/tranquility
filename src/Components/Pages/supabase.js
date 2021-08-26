@@ -14,7 +14,7 @@ const { data, error } = await supabase
     { fullname: 'The Shire', email:'sample@sample.com',pass:'strong password' }
   ])
 }
-useEffect(()=>{saveData()},[])
+//useEffect(()=>{saveData()},[])
 return(
     <div></div>
 )

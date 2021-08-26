@@ -8,13 +8,14 @@ function Results() {
   const axios = require("axios");
   const [books, setBooks] = useState([]);
   const [booksData, setBooksData] = useState([]);
+  const [searchWord, setSearchWord] = useState("depression");
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
   async function getBooks() {
     var bookRequest = {
       method: "GET",
       url: "https://www.googleapis.com/books/v1/volumes?",
-      params: { q: "anxiety" },
+      params: { q: searchWord },
     };
     axios.request(bookRequest).then(function (response) {
       setBooks(response.data.items);
@@ -23,19 +24,26 @@ function Results() {
     });
     
   }
-  useEffect(() => {getBooks()}, [isDataLoaded]);
+  useEffect(() => {getBooks()}, [searchWord]);
+  
 
  function insertData(){
-   setBooksData(books.map((item,index)=>({"img":books[index].volumeInfo.imageLinks.smallThumbnail,"title":books[index].volumeInfo.title, "author":books[index].volumeInfo.authors})))
+   setBooksData(books.map((item,index)=>({
+       "img":books[index].volumeInfo.imageLinks.smallThumbnail,
+       "title":books[index].volumeInfo.title, 
+       "author":books[index].volumeInfo.authors,
+       "description":books[index].volumeInfo.description,
+       "selflink":books[index].accessInfo.webReaderLink
+    })))
  } 
 useEffect(() => {insertData()}, [isDataLoaded]);
   console.log(isDataLoaded)
-  console.log(booksData)
+  console.log(books)
 if(isDataLoaded==true){
   return (
-    <div>
+    <div style={{display:'flex', flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
       {/* <SignInSide /> */}
-      <RecDisplay info={booksData} />
+      <RecDisplay info={booksData} type="BOOKS" />
       
      {/* <img src={books[0].volumeInfo.imageLinks.smallThumbnail} /> */}
     </div>

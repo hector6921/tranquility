@@ -31,7 +31,8 @@ function App() {
   return (
     <div>
       {/* <SignInSide /> */}
-      <Results/>
+      <Content/>
+      {/* <Results/> */}
       {/* <RecDisplay/> */}
      {/* <img src={books[0].volumeInfo.imageLinks.smallThumbnail} /> */}
     </div>
