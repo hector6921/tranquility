@@ -5,6 +5,8 @@ import Content from "./Components/Pages/Content";
 import SignInSide from "./Components/Pages/Signin";
 import SignUp from "./Components/Pages/Signup";
 import SendData from "./Components/Pages/supabase";
+//import RecDisplay from "./Components/Pages/recdis";
+import Results from "./Components/Pages/results";
 
 
 function App() {
@@ -29,8 +31,9 @@ function App() {
   return (
     <div>
       {/* <SignInSide /> */}
-      <Content/>
-     <img src={books[0].volumeInfo.imageLinks.smallThumbnail} />
+      <Results/>
+      {/* <RecDisplay/> */}
+     {/* <img src={books[0].volumeInfo.imageLinks.smallThumbnail} /> */}
     </div>
   );
 }
