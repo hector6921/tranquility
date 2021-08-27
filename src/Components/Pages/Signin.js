@@ -16,6 +16,7 @@ import forestpic from "../Images/forest.mp4";
 import { CardMedia } from "@material-ui/core";
 import "../Pages/Signin.css";
 import logo from "../Images/tranquility.jpg";
+import { useState } from "react";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -69,6 +70,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
   const classes = useStyles();
+
+  const [hasNoAccount,setHasNoAccount] = useState(false)
+
+  function signup(){
+    setHasNoAccount(true)
+  }
 
   return (
     <div style={{ height: "100vh", backgroundColor: "#30ba8f" }} id="container">
@@ -147,7 +154,7 @@ export default function SignInSide() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link onClick={signup} variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
