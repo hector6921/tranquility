@@ -42,11 +42,7 @@ export default function ComplexGrid() {
             ABOUT
           </Typography>
           <Typography style={{ fontSize: 25, color: "#fff", fontWeight: 600 }}>
-            I understand the weight and frustration of feeling like there is
-            more out there for you, but not knowing where to turn to first.
-            That’s why my mission is simple: give my clients the wellness
-            education, tools and resources that they need to feel happy,
-            healthy, and capable of managing life’s pressures.
+          We understand the weight and frustration of feeling like there is more out there for you, but not knowing where to turn to first can be intimidating. That’s why our mission is simple: give our clients the education, tools and resources that they need to feel happy, healthy, and capable of manage your mental health.
           </Typography>
           <Fab
             size="large"
