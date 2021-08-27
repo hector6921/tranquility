@@ -75,6 +75,7 @@ export default function DisSel() {
   const classes = useStyles();
   const [pics, setPics] = useState([fatigue,nausea,nervousness,sweating,counting,washing,checking,orderliness])
   const [picsName, setPicsName] = useState(['fatigue','nausea','nervousness','sweating','counting','washing','checking','orderliness'])
+  
   const handleChange = (event) => {
     setSpacing(Number(event.target.value));
   };
