@@ -74,7 +74,7 @@ console.log(props)
     //   <div className={classes.container}>
     <div className={classes.root}>
         <DialogTitle style={{color:'#fff'}}>{props.type}</DialogTitle>
-      <ImageList className={classes.imageList} style={{height:'55vh',display:'flex'}} cols={10}>
+      <ImageList className={classes.imageList} style={{height:'55vh',width:'80vw',display:'flex'}} cols={10}>
         {props.info.map((item) => (
           <ImageListItem id='recitem' key={item.img} style={{width:'21.3%',marginLeft:'25px',height:'380px'}}>
             <a target='#_blank' href={item.selflink}><img style={{padding:'1px',objectFit:'cover',height:'65%',width:'100%'}} src={item.img} alt={item.title} />
